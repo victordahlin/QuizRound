@@ -47,12 +47,5 @@ var Highscore = new Schema({
 	totalScore 	: Number
 });
 
-var Comment = new Schema({
-    username : String,
-    password : String,
-    content  : String,
-    created  : Date
-});
- 
-mongoose.model( 'Comment', Comment ); 
-mongoose.connect( 'mongodb://localhost/express-comment' );
+//mongoose.model( '..', ... ); 
+mongoose.connect( 'mongodb://localhost/quiz' );

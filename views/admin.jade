@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title  
+  select
+    option(value="1") 1
+    option(value="2") 2
+    option(value="3") 3
+    
+    br  
+    Question input(type="text", name="question")
+    br
+    input(type="text", name="one")
+    input(type="text", name="cross")
+    input(type="text", name="two")
+    input(type="text", name="answere")
+    input(type="submit", value="Save")
