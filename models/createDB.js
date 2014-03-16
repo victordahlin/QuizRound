@@ -1,51 +1,49 @@
-var mongoose = require( 'mongoose' );
-var Schema   = mongoose.Schema;
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/quizDB');
 
-var Administrators = new Schema({
-	id 			: Number, 
-	name 		: String, 
-	password 	: String
+var administrators = db.get('Administrators');
+administrators.insert({
+	name 		: "admin", 
+	password 	: "rootroot"
 });
 
-var Players = new Schema({
-	id 				: Number, 
-	name 			: String, 
-	email 			: String,
-	password 		: String,
-	roundsPlayed 	: Number
+var player = db.get('Player');
+administrators.insert({
+	name 			: "user", 
+	email			: "test@test.com",
+	password 		: "root",
+	roundsPlayed 	: 5
 });
 
-var GameQuestions = new Schema({
-	id 			: Number, 
-	question 	: String, 
-	one 		: String,
-	cross 		: String,
-	two 		: String,
-	answere 	: String
+var gameQuestions = db.get('GameQuestions');
+gameQuestions.insert({
+	question 		: "admin", 
+	one 			: "rootroot",
+	cross 			: "rot",
+	two 			: "meep", 
+	answere 		: ""
 });
 
-var CurrentRound = new Schema({
-	id 					: Number, 
-	round 				: Number, 
-	currentGameQuestion : Number,
-	currentScore 		: Number,
-	user 				: Number
+var currentRound = db.get('CurrentRound');
+currentRound.insert({
+	round 				: "admin", 
+	currentGameQuestion : "rootroot",
+	currentScore 		: "rot",
+	user 				: "meep"
 });
 
-var Round = new Schema({
-	id 		: Number, 
-	q1 		: Number, 
-	q2 		: Number,
-	q3 		: Number,
-	q4 		: Number,
-	q5 		: Number
+var round = db.get('Round');
+round.insert({
+	q1 : "admin", 
+	q2 : "rootroot",
+	q3 : "rot",
+	q4 : "meep",
+	q5 : "",
 });
 
-var Highscore = new Schema({
-	id 			: Number, 
-	name		: String, 
-	totalScore 	: Number
+var highscore = db.get('Highscore');
+highscore.insert({
+	name 		: "",
+	totalScore 	: ""
 });
-
-//mongoose.model( '..', ... ); 
-mongoose.connect( 'mongodb://localhost/quiz' );
