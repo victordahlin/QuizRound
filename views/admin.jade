@@ -1,17 +1,18 @@
 extends layout
 
 block content
-  h1= title  
-  select
-    option(value="1") 1
-    option(value="2") 2
-    option(value="3") 3
-    
-    br  
-    Question input(type="text", name="question")
-    br
+  h1= title
+  
+  form(name="addQuestion",method="post",action="/addQuestion")
+    | <br><br>Question:
+    input(type="text", name="question")
+    | <br><br>One:
     input(type="text", name="one")
+    | <br><br>Cross:
     input(type="text", name="cross")
+    | <br><br>Two:
     input(type="text", name="two")
+    | <br><br>Answere:
     input(type="text", name="answere")
+    | <br><br>
     input(type="submit", value="Save")

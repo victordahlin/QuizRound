@@ -1,4 +1,9 @@
 extends layout
 
 block content
-  h1= title
+    h1.
+        User List
+    ul
+        each high, i in highscore
+            li
+                p= high.name
