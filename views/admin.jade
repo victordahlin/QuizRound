@@ -4,15 +4,13 @@ block content
   h1= title
   
   form(name="addQuestion",method="post",action="/addQuestion")
-    | <br><br>Question:
-    input(type="text", name="question")
-    | <br><br>One:
-    input(type="text", name="one")
-    | <br><br>Cross:
-    input(type="text", name="cross")
-    | <br><br>Two:
-    input(type="text", name="two")
-    | <br><br>Answere:
-    input(type="text", name="answere")
-    | <br><br>
-    input(type="submit", value="Save")
+    | <br>
+    button(type="text", name="addQuestion" value="/addQuestion") Add new question
+
+  form(name="createUser",method="post",action="/createUser")
+    | <br>
+    button(type="text", name="createUser" value="/createUser") Create user
+
+  form(name="createRound",method="post",action="/createRound")
+    | <br>
+    button(type="text", name="createRound" value="/createRound") Create new round
