@@ -1,9 +1,14 @@
 extends layout
 
 block content
+ div(class="container")
   h1= title
   p #{status}
-    form(method="get", action="/play")
-      input(type='submit', value='Play')
-    form(method="get", action="/highscore")
-      input(type='submit', value='Highscore')
+  <br>
+  form(method="get", class="form-inline",role="form", action="/play")
+   div(class="form-group")
+    input(type='submit', value='Play', class="btn btn-success")
+  <br>
+  form(method="get", action="/highscore")
+   div(class="form-group")
+    input(type='submit', value='Highscore', class="btn btn-primary")

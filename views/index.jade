@@ -1,15 +1,20 @@
 extends layout
 
 block content
-  h1= title
-    form( method="post", action="/login")
-        input(type="text", name="username")
-        input(type="password", name="password")
-        input(type="submit", value="Log in")
-    form( method="get", action="/createPlayer")
-        input(type="submit", value="Create new user")
-    <br><br><br>
-    form(method="get", action="/admin")   
-        input(type="submit", value="Admin")  
-  body
-    p #{name}
+  div(class="container")
+   h1= title
+   <br><br>
+   form( method="post", class="form-inline",role="form" ,action="/login")    
+    div(class="form-group")
+     input(type="text", name="username", class="form-control", placeholder="Enter username")
+    div(class="form-group")
+     input(type="password", name="password", class="form-control", placeholder="Enter password")
+     input(type="submit", value="Log in", class="btn btn-success")
+    <br><br>
+   
+   form( method="get", class="form-inline", role="form", action="/createPlayer")
+    div(class="form-group")
+     input(type="submit", value="Create new user", class="btn btn-success")
+   <br><br><br>
+   form(method="get", class="form-inline", role="form", action="/admin")   
+    input(type="submit", value="Admin", class="btn btn-info")

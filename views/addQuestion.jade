@@ -1,18 +1,20 @@
 extends layout
 
 block content
+ div(class="container")
   h1= title
-  
-  form(name="addQuestion",method="post",action="/addQuestion")
-    | <br><br>Question:
-    input(type="text", name="question")
-    | <br><br>One:
-    input(type="text", name="one")
-    | <br><br>Cross:
-    input(type="text", name="cross")
-    | <br><br>Two:
-    input(type="text", name="two")
-    | <br><br>Answer:
-    input(type="text", name="answer")
-    | <br><br>
-    input(type="submit", value="Save")
+  <br>
+  form(name="addQuestion",method="post",class="form-inline",role="form", action="/addQuestion")   
+   div(class="form-group") 
+    input(type="text", name="question", class="form-control", placeholder="Question")
+   div(class="form-group")
+    input(type="text", name="one", class="form-control", placeholder="Question one")
+   div(class="form-group")
+    input(type="text", name="cross", class="form-control", placeholder="Question cross")
+   div(class="form-group")
+    input(type="text", name="two", class="form-control", placeholder="Question two")
+   div(class="form-group")
+    input(type="text", name="answer", class="form-control", placeholder="Enter answer")
+   div(class="form-group")
+    <br>
+    input(type="submit", value="Save", class="btn btn-success")

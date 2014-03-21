@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  
-  h3= chooseRound
-  form(method="post", action="/play") 
-   select(name='roundID')
+ div(class="container")
+  h1= title  
+  <br>
+  h4= chooseRound
+  <br>
+  form(method="post",class="form-inline",role="form", action="/question") 
+   div(class="form-group")
+    select(name='roundID', class="form-control")
      each r in Rounds
       option(value=r._id)=r._id
-   input(type='submit', value='Choose Round')
+  <br>  
+  input(type='submit', value='Choose Round', class="btn btn-success")
