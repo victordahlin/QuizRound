@@ -1,14 +1,22 @@
 extends layout
 
 block content
+ div(class="container")
   h1= title
   
-  form(name="createPlayer",method="post",action="/createPlayer")
-    | <br><br>Name:
-    input(type="text", name="name")
-    | <br><br>Email:
-    input(type="text", name="email")
-    | <br><br>Password:
-    input(type="text", name="password")
-    | <br>
-    input(type="submit", value="Save")
+  <br>
+  form(name="createPlayer",method="post",class="form-inline",role="form", action="/createPlayer")
+   div(class="form-group")
+    input(type="text", name="name", class="form-control", placeholder="Enter name")
+   
+   <br><br>
+   div(class="form-group") 
+    input(type="text", name="email", class="form-control", placeholder="Enter your email")
+
+   <br><br>
+   div(class="form-group") 
+    input(type="text", name="password", class="form-control", placeholder="Enter password")
+
+   <br><br>
+   div(class="form-group") 
+    input(type="submit", value="Save", class="btn btn-success")
