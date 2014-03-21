@@ -2,8 +2,8 @@ extends layout
 
 block content
     h1.
-        User List
+        HighScores
     ul
-        each high, i in highscore
+        each high in highscore
             li
-                p= high.name
+                p= high.name + ' med : ' + high.totalScore + ' poäng!'

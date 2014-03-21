@@ -3,14 +3,14 @@ extends layout
 block content
   h1= title
   
-  form(name="addQuestion",method="post",action="/addQuestion")
+  form(method="get",action="/addQuestion")
     | <br>
-    button(type="text", name="addQuestion" value="/addQuestion") Add new question
+    button(type="text") Add new question
 
-  form(name="createUser",method="post",action="/createUser")
+  form(method="get",action="/createAdmin")
     | <br>
-    button(type="text", name="createUser" value="/createUser") Create user
+    button(type="text") Create user
 
-  form(name="createRound",method="post",action="/createRound")
+  form(method="get",action="/createRound")
     | <br>
-    button(type="text", name="createRound" value="/createRound") Create new round
+    button(type="text") Create new round

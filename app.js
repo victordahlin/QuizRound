@@ -2,10 +2,10 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var fs 	 = require('fs');
-//var mongoose = require( 'mongoose' );
 
 var app = express();
 
+//db.dropDatabase()
 //require( './models/createDB' );
 
 // all environments
@@ -17,24 +17,11 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-//app.use(express.cookieParser('your secret here'));
+app.use(express.cookieParser());
 //app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-/*mongoose.connect('mongodb://127.0.0.1:27017/quiz');
-
-var PlayerModel = require('models/player');
-    PlayerModel.find({"name" : "testuser1"}, function(err, player){
-      if(err){
-        console.log(err);
-      }
-      else{
-        console.log("User: %j", player);
-      }
-    });
-*/
 
 
 // development only

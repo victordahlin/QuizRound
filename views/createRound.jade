@@ -1,4 +1,29 @@
 extends layout
 
 block content
-  h1= title
+    h1=title
+    form(method='post',action='/createRound')
+      | <br>Name:
+      input(type="text", name="name")
+      | <br><br>Q1:  
+      select(id="one", value="one", name="one")
+         each q in questions           	
+            option(value=q._id) #{q.question}
+      | <br><br>Q2:  
+      select(id="two", value="two", name="two")
+         each q in questions           	
+            option(value=q._id) #{q.question}
+      | <br><br>Q3:  
+      select(id="three", value="three", name="three")
+         each q in questions           	
+            option(value=q._id) #{q.question}
+      | <br><br>Q4:  
+      select(id="four", value="four", name="four")
+         each q in questions           	
+            option(value=q._id) #{q.question}
+      | <br><br>Q5:  
+      select(id="five", value="five", name="five")
+         each q in questions           	
+            option(value=q._id) #{q.question}
+      | <br><br>  
+      input(type="submit",value="Create Round")

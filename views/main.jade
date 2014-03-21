@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p #{status}
+    form(method="get", action="/play")
+      input(type='submit', value='Play')
+    form(method="get", action="/highscore")
+      input(type='submit', value='Highscore')

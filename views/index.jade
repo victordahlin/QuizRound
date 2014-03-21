@@ -4,5 +4,12 @@ block content
   h1= title
     form( method="post", action="/login")
         input(type="text", name="username")
-        input(type="text", name="password")
-        input(type="submit", value="Save")
+        input(type="password", name="password")
+        input(type="submit", value="Log in")
+    form( method="get", action="/createPlayer")
+        input(type="submit", value="Create new user")
+    <br><br><br>
+    form(method="get", action="/admin")   
+        input(type="submit", value="Admin")  
+  body
+    p #{name}

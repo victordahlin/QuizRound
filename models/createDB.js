@@ -9,7 +9,7 @@ administrators.insert({
 });
 
 var player = db.get('Player');
-administrators.insert({
+player.insert({
 	name 			: "user", 
 	email			: "test@test.com",
 	password 		: "root",
@@ -18,32 +18,33 @@ administrators.insert({
 
 var gameQuestions = db.get('GameQuestions');
 gameQuestions.insert({
-	question 		: "admin", 
-	one 			: "rootroot",
-	cross 			: "rot",
-	two 			: "meep", 
-	answere 		: ""
+	question 		: "Where is Waldo?", 
+	one 			: "In spot one",
+	cross 			: "In spot cross",
+	two 			: "In spot two", 
+	answere 		: "one"
 });
 
 var currentRound = db.get('CurrentRound');
 currentRound.insert({
-	round 				: "admin", 
-	currentGameQuestion : "rootroot",
-	currentScore 		: "rot",
-	user 				: "meep"
+	round 				: "RoundID", 
+	currentGameQuestion : 1,
+	currentScore 		: 0,
+	user 				: "UserID"
 });
 
 var round = db.get('Round');
 round.insert({
-	q1 : "admin", 
-	q2 : "rootroot",
-	q3 : "rot",
-	q4 : "meep",
-	q5 : "",
+	name : "Roundplaceholder",
+	q1 : "QuestionID1", 
+	q2 : "QuestionID2",
+	q3 : "QuestionID3",
+	q4 : "QuestionID4",
+	q5 : "QuestionID5"
 });
 
 var highscore = db.get('Highscore');
 highscore.insert({
-	name 		: "",
-	totalScore 	: ""
+	name 		: "UserID",
+	totalScore 	: 0
 });

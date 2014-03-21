@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  
+  form(name="createPlayer",method="post",action="/createPlayer")
+    | <br><br>Name:
+    input(type="text", name="name")
+    | <br><br>Email:
+    input(type="text", name="email")
+    | <br><br>Password:
+    input(type="text", name="password")
+    | <br>
+    input(type="submit", value="Save")
