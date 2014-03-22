@@ -1,0 +1,10 @@
+extends layout
+
+block content
+ div(class="container")
+  h1= title
+  p Congratulations #{player} you got #{points} points!
+  <br>
+  form(method="post", class="form-inline",role="form", action="/result")
+   div(class="form-group")
+    input(type='submit', value='Return to mainscreen', class="btn btn-success")

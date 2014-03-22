@@ -16,12 +16,19 @@ module.exports.controller = function(app) {
 
       var user = req.body.username;
       var pass = req.body.password;
+
+      // Log in administrators to admin page
+      var administrators = db.get('Administrators');
+      administrators.find({name : user, password : pass}, {}, function(e, admin){
+          if(admin[0] != undefined){
+          res.redirect('../admin');
+        }
+      });
+
+      // Log in player to main page
       var player = db.get('Player');
-
       player.find({name : user, password : pass}, {}, function(e, users){
-
         if(users[0] != undefined){
-          //den här ska istället redirecta till en main
           res.cookie('user', users[0]._id);
           res.redirect('../main');
         }

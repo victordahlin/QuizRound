@@ -13,14 +13,14 @@ module.exports.controller = function(app) {
 
 		currentDB.find({user : currentUser}, {}, function(e,user){
 			if(user[0] != undefined && user[0].currentGameQuestion < 6){
-				console.log(user[0]);
+				//console.log(user[0]);
 				res.redirect('/question');
 			}
 			else{
 				var game = db.get('Round');
 
 				game.find({},{}, function(e, rounds){
-					console.log(rounds[0]);
+					//console.log(rounds[0]);
 					res.render('play', { 
 						title : "Play",
 						'Rounds' : rounds,

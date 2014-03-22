@@ -10,6 +10,6 @@ block content
    div(class="form-group")
     select(name='roundID', class="form-control")
      each r in Rounds
-      option(value=r._id)=r._id
-  <br>  
-  input(type='submit', value='Choose Round', class="btn btn-success")
+      option(value=r._id)=r.name
+    <br><br>  
+    input(type='submit', value='Choose Round', class="btn btn-success")

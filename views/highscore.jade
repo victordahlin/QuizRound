@@ -1,9 +1,10 @@
 extends layout
 
 block content
-    h1.
-        HighScores
+ div(class="container")
+    h1=title
+    <br>
     ul
-        each high in highscore
-            li
-                p= high.name + ' med : ' + high.totalScore + ' poäng!'
+     each high in highscore
+      li
+       p= high.name + ' med : ' + high.totalScore + ' poäng!'

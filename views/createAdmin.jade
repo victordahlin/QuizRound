@@ -1,4 +1,18 @@
 extends layout
 
 block content
+ div(class="container")
   h1= title
+  
+  <br>
+  form(name="createPlayer",method="post",class="form-inline",role="form", action="/createAdmin")
+   div(class="form-group")
+    input(type="text", name="uid", class="form-control", placeholder="Enter name")
+
+   <br><br>
+   div(class="form-group") 
+    input(type="password", name="pwd", class="form-control", placeholder="Enter password")
+
+   <br><br>
+   div(class="form-group") 
+    input(type="submit", value="Save", class="btn btn-success")

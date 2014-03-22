@@ -11,13 +11,18 @@ module.exports.controller = function(app) {
 		var cookieUser = req.cookies.user;
 		var currentRound;
 		var currentQuestion;
+		var currentScore;
 		currentRoundDB.find({user : cookieUser}, {}, function(e, current){
 
 			currentRound = current[0].round;			
 			currentQuestion = parseInt(current[0].currentGameQuestion);
+			currentScore = parseInt(current[0].currentScore);
 			console.log(currentQuestion);
 			if( currentQuestion > 5 ) {
-				res.redirect('../main');
+				//Här borde det hända lite fler saker. 
+				//Typ lägga till en highscore
+				//Och ta bort den currentround som finns
+				res.redirect('../result');
 			} else {
 
 				var roundDB = db.get('Round');
@@ -70,13 +75,13 @@ module.exports.controller = function(app) {
 		var two = req.body.two;
 
 		var r = parseInt(req.body.round)+1;
-		console.log(r);
+		//console.log(r);
 		
 		var u = req.cookies.user;
-		console.log(u);
+		//console.log(u);
 		
 		var qest = req.body.question;
-		console.log(qest);
+		//console.log(qest);
 
 		var gameQuestionDB = db.get('GameQuestions');
 		gameQuestionDB.find({ question : qest },{}, function(e,q){
@@ -94,8 +99,8 @@ module.exports.controller = function(app) {
 			if(cross != undefined && cross == ans) {
 				correct = 5;
 			}
-			console.log(ans);
-			console.log(correct);
+		//	console.log(ans);
+		//	console.log(correct);
 
 			var currentRoundDB = db.get('CurrentRound');
 			currentRoundDB.update( 
