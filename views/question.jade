@@ -1,4 +1,19 @@
 extends layout
 
 block content
+ div(class="container")
   h1= title
+  <br><br>
+  h3= q
+  body
+    form( method="post", class="form-inline",role="form", action="/question")
+        input(type="hidden", value=round, class="form-control", name="round")
+        input(type="hidden", value=q, class="form-control", name="question")
+        | <br>#{one}: 
+        input(type="radio", value="one", class="form-control", name="one")
+        | <br>#{cross}: 
+        input(type="radio", value="cross", class="form-control", name="cross")
+        | <br>#{two}: 
+        input(type="radio", value="two", class="form-control", name="two")
+        | <br><br>
+        input(type="submit", value="Press me", class="btn btn-success")

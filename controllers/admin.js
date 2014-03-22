@@ -50,14 +50,6 @@ module.exports.controller = function(app) {
     var thrd = req.body.two;
     var ans = req.body.answer;
 
-    //console.log(q + " " + fst + " " + snd + " " + thrd + " " + ans);
-    /*  admin.jade
-        h3= chooseQuestions  
-        select
-          each q, i in questions
-            option(value=q.id)=q.id
-    */
-
     game.insert({
       question : q, 
       one : fst,
@@ -73,11 +65,7 @@ module.exports.controller = function(app) {
       title : "Create new admin"    
     });
   });
-
-
-  app.post('/createAdmin', function(req,res){
-
-  });
+  //app.post('/createAdmin', function(req,res){  });
 
   app.get('/createRound', function(req,res) {
     var questionsDB = db.get('GameQuestions');
